@@ -33,3 +33,20 @@ DELETE {{host}}/api/products/5
 ###
 
 GET {{host}}/api/users
+
+###
+
+GET {{host}}/api/orders
+
+###
+
+POST {{host}}/api/orders
+Content-Type: application/json
+
+{
+  "productId": 1,
+  "quantity": 2,
+  "unitPrice": 24.99,
+  "customerEmail": "alice@example.com",
+  "note": "Leave at the door"
+}

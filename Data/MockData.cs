@@ -52,6 +52,15 @@ public class MockData
         lock (_lock) return _products.RemoveAll(p => p.Id == id) > 0;
     }
 
+    public void UpdateStock(int id, int stock)
+    {
+        lock (_lock)
+        {
+            var index = _products.FindIndex(p => p.Id == id);
+            if (index >= 0) _products[index] = _products[index] with { Stock = stock };
+        }
+    }
+
     public IReadOnlyList<User> GetUsers()
     {
         lock (_lock) return _users.ToList();
