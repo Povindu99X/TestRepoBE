@@ -1,0 +1,35 @@
+@host = http://localhost:5219
+
+GET {{host}}/api/health
+
+###
+
+GET {{host}}/api/products
+
+###
+
+GET {{host}}/api/products?category=electronics
+
+###
+
+GET {{host}}/api/products/1
+
+###
+
+POST {{host}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Water Bottle",
+  "category": "Kitchen",
+  "price": 12.5,
+  "stock": 80
+}
+
+###
+
+DELETE {{host}}/api/products/5
+
+###
+
+GET {{host}}/api/users
